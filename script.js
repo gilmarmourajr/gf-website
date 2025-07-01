@@ -44,7 +44,7 @@ async function showNextText() {
 
   if (currentIndex < texts.length) {
     texts[currentIndex].classList.add('active');
-    setTimeout(showNextText, 2000);
+    setTimeout(showNextText, 4000);
   } else {
     await fadeOut(textContainer);
     await fadeIn(hairGame, 800, 'flex');
