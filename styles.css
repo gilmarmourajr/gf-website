@@ -1,0 +1,255 @@
+:root {
+  --primary-color: rgb(255, 141, 160);
+  --secondary-color: #ffffff;
+  --third-color: #ffc0c0;
+  --bot-bg: #2a2a2a;
+  --user-bg: #e91e63;
+}
+body {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+strong {
+    color: red;
+}
+#text-container {
+  position: relative;
+  width: 80%;
+  text-align: center;
+  height: 100px;
+  transition: opacity 1s ease;
+}
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 1.5rem;
+}
+.text.active {
+  opacity: 1;
+}
+.hidden {
+  display: none;
+}
+
+/* Hair game */
+#hair-game {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+#hair-game.visible {
+  display: flex;
+  opacity: 1;
+}
+#hair-game h1 {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  transition: opacity 1s ease;
+}
+#hair-game h1.hidden {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.card {
+  width: 150px;
+  height: 150px;
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrong-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.3rem;
+  color: red;
+  font-weight: bold;
+  opacity: 1;
+  animation: fadeOut 1.5s ease forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#compliment {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Quiz */
+#quiz-section {
+  display: none;
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 400px;
+}
+.quiz-question {
+  margin-bottom: 1rem;
+}
+.quiz-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--third-color);
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.quiz-buttons button:hover {
+  background-color: #fffdfe;
+}
+#quiz-result {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+}
+
+/* Chat fake */
+#chat-container {
+  display: none;
+  flex-direction: column;
+  width: 320px;
+  max-width: 90vw;
+  background: #111;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px #f06292;
+  font-size: 0.95rem;
+}
+.chat-msg {
+  max-width: 75%;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 15px;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeIn 0.5s forwards;
+}
+.chat-msg.bot {
+  background: var(--bot-bg);
+  align-self: flex-start;
+  color: #eee;
+  border-bottom-left-radius: 0;
+}
+.chat-msg.user {
+  background: var(--user-bg);
+  align-self: flex-end;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+.typing {
+  font-style: italic;
+  color: #aaa;
+  max-width: 75%;
+  align-self: flex-start;
+  margin: 5px 0;
+}
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#weird-msg {
+  display: none;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Pedido final */
+#final-message {
+  display: none;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+#pedido {
+  display: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+#pedido p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#pedido button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#btn-sim {
+  background-color: var(--third-color);
+  color: black;
+}
+#btn-sim:hover {
+  background-color: #ffe0ef;
+}
+#btn-nao {
+  background-color: #444;
+  color: #eee;
+  position: relative;
+}
+
+#hair-game,
+#compliment,
+#quiz-section {
+  opacity: 0;
+  transition: opacity 1s ease;
+}

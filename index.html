@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pedido Interativo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="text-container">
+      <p class="text active">Oieeeee! Tudo bom?</p>
+      <p class="text">Pensei em fazer algo especial pra hoje!</p>
+      <p class="text">Queria te fazer uma <strong>perguntinha</strong>, hein</p>
+      <p class="text">Não vai ficar ansiosa!</p>
+      <p class="text">Mas, primeiro, preciso ver se você está pronta...</p>
+      <p class="text">Então vamos começar com uma pergunta fácil</p>
+    </div>
+
+    <div id="hair-game">
+      <h1>De qual jeito você fica pior?</h1>
+      <div class="cards">
+        <div class="card" onclick="hideCard(this)">
+          <img src="images/ela1.jpg" />
+        </div>
+        <div class="card" onclick="hideCard(this)">
+          <img src="images/ela2.jpg" />
+        </div>
+        <div class="card" onclick="hideCard(this)">
+          <img src="images/ela3.jpg" />
+        </div>
+        <div class="card" onclick="hideCard(this)">
+          <img src="images/ela4.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div id="compliment">
+      Você fica linda até careca, minha querida KKKKK<br /><br />
+      <em>Tudo bem, você errou nessa... mas vamos tentar de novo hein</em>
+    </div>
+
+    <div id="quiz-section">
+      <h2>Será que você gosta de mim?</h2>
+      <div class="quiz-question" id="question"></div>
+      <div class="quiz-buttons">
+        <button onclick="nextQuestion(true)">Sim</button>
+        <button onclick="nextQuestion(false)">Não</button>
+      </div>
+      <div id="quiz-result"></div>
+    </div>
+
+    <div id="weird-msg">Pera aí, tem alguma coisa estranha rolando...</div>
+
+    <div id="chat-container"></div>
+
+    <div id="final-message">
+      Vish, não era pra você ver isso... mas chega de enrolação vai
+    </div>
+
+    <div id="pedido">
+      <p>Quer namorar comigo?</p>
+      <button id="btn-sim">Sim, claro!</button>
+      <button id="btn-nao">Não, eca...</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
