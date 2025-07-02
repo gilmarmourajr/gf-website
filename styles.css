@@ -100,11 +100,11 @@ strong {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: red;
-  font-weight: bold;
+  font-weight: bolder;
   opacity: 1;
-  animation: fadeOut 1.5s ease forwards;
+  animation: fadeOut 2s ease forwards;
 }
 @keyframes fadeOut {
   0% {
@@ -131,9 +131,11 @@ strong {
 }
 .quiz-question {
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 .quiz-buttons button {
-  margin: 5px;
+  font-size: 1.1rem;
+  margin: 5px 30px;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -226,7 +228,7 @@ strong {
   margin-bottom: 1rem;
 }
 #pedido button {
-  margin: 0 10px;
+  margin: 0 30px;
   padding: 10px 20px;
   font-size: 1.1rem;
   border-radius: 8px;
@@ -245,6 +247,7 @@ strong {
   background-color: #444;
   color: #eee;
   position: relative;
+  transition: 0.5s;
 }
 
 #hair-game,

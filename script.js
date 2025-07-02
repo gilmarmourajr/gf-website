@@ -54,7 +54,7 @@ async function showNextText() {
 setTimeout(showNextText, 1000);
 
 function hideCard(card) {
-  textList = [
+  const textList = [
     "errou feio",
     "tu tá linda aqui",
     "errou demais, querida",
@@ -65,14 +65,19 @@ function hideCard(card) {
 
   const wrong = document.createElement("div");
   wrong.classList.add("wrong-text");
-  wrong.innerText = textList[Math.floor(Math.random() * 6)];
+  wrong.innerText = textList[Math.floor(Math.random() * textList.length)];
   card.appendChild(wrong);
+
+  // Adiciona filtro vermelho à imagem
+  const img = card.querySelector("img");
+  img.style.filter = "brightness(0.4) sepia(1) hue-rotate(-30deg) saturate(6)";
 
   setTimeout(() => {
     card.style.display = "none";
     checkRemaining();
-  }, 1200);
+  }, 1600);
 }
+
 
 async function checkRemaining() {
   const remaining = document.querySelectorAll('#hair-game .card:not([style*="display: none"])');
@@ -221,6 +226,17 @@ btnSim.addEventListener("click", () => {
 
 // Botão não foge do mouse
 btnNao.addEventListener("mouseenter", () => {
+  const xMax = window.innerWidth - btnNao.offsetWidth - 20;
+  const yMax = window.innerHeight - btnNao.offsetHeight - 20;
+  const randomX = Math.floor(Math.random() * xMax);
+  const randomY = Math.floor(Math.random() * yMax);
+
+  btnNao.style.position = "fixed";
+  btnNao.style.left = randomX + "px";
+  btnNao.style.top = randomY + "px";
+});
+
+btnNao.addEventListener("click", () => {
   const xMax = window.innerWidth - btnNao.offsetWidth - 20;
   const yMax = window.innerHeight - btnNao.offsetHeight - 20;
   const randomX = Math.floor(Math.random() * xMax);
